@@ -11,6 +11,7 @@ namespace AndreBeatriz72BCArro
         //Atributos internos da classe
         private int velocidade;
         private int marcha;
+        private int freio;
 
         //Propriedades da classe
         public int Velocidade
@@ -23,20 +24,45 @@ namespace AndreBeatriz72BCArro
             {
                 if (velocidade >= 0)
                     velocidade = value;
-                    marcha = 1;
-                if(velocidade >= 20)
-                {
-                    marcha = 2;
-                }
-                if(velocidade >= 40)
-                {
-                    marcha=3;
-                }
+            
                 else
                     throw new ApplicationException("A velocidade não pode ser negativa!");
 
+                if (velocidade >= 0 && velocidade < 20)
+                {
+                    marcha = 1;
+                }
+                else
+                if (velocidade >= 20 && velocidade < 40)
+                {
+                    marcha = 2;
+                }
+                else
+                if (velocidade >= 40 && velocidade < 60)
+                {
+                    marcha = 3;
+                }
+                else
+                if (velocidade >= 60 && velocidade < 80)
+                {
+                    marcha = 4;
+                }
+                else
+                if (velocidade >= 80)
+                {
+                    marcha = 5;
+                }
+                
             }
         }
+        public int Marcha
+        { 
+            get { return marcha; }
+            set
+            { 
+            }
+        }
+        
 
     }
 }
